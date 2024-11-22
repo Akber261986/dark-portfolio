@@ -80,7 +80,7 @@ const ContactUs = () => {
       <div className='flex flex-col lg:flex-row gap-4'>
         <div className='lg:w-1/3 flex flex-col gap-8 text-[#666] dark:text-white font-bold px-4'>
           <div>
-            <h1 className="uppercase text-2xl mb-4 ">Don`&apos;`t be shy</h1>
+            <h1 className="uppercase text-2xl mb-4 ">Don&apos;t be shy</h1>
             <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
           </div>
           <div className="flex items-start gap-4">
@@ -117,21 +117,21 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="flex gap-6">
-          <Link href= "" className="group">
+          <Link href= "https://web.facebook.com/ghulam.dal/" className="group">
             <div className="w-10 h-10 rounded-full bg-[#eee] dark:bg-[#252525] flex items-center justify-center group-hover:bg-[#ffb400]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
             className="fill-current h-5 group-hover:text-white"
             ><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
             </div>
           </Link>
-          <Link href= "" className="group">
+          <Link href= "https://github.com/Akber261986" className="group">
             <div className="w-10 h-10 rounded-full bg-[#eee] dark:bg-[#252525] flex items-center justify-center group-hover:bg-[#ffb400]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
             className="fill-current w-6 group-hover:text-white"
             ><path d="M216.3 158.4H137C97 147.9 6.5 150.6 6.5 233.2c0 30.1 15 51.2 35 61-25.1 23-37 33.9-37 49.2 0 11 4.5 21.1 17.9 26.8C8.1 383.6 0 393.4 0 411.7c0 32.1 28.1 50.8 101.6 50.8 70.8 0 111.8-26.4 111.8-73.2 0-58.7-45.2-56.5-151.6-63l13.4-21.6c27.3 7.6 118.7 10 118.7-67.9 0-18.7-7.7-31.7-15-41.1l37.4-2.8zm-63.4 241.9c0 32.1-104.9 32.1-104.9 2.4 0-8.1 5.3-15 10.6-21.5 77.7 5.3 94.3 3.4 94.3 19.1zm-50.8-134.6c-52.8 0-50.5-71.2 1.2-71.2 49.5 0 50.8 71.2-1.2 71.2zm133.3 100.5v-32.1c26.8-3.7 27.2-2 27.2-11V203.6c0-8.5-2.1-7.4-27.2-16.3l4.5-32.9H324v168.7c0 6.5 .4 7.3 6.5 8.1l20.7 2.8v32.1zm52.5-244.3c-23.2 0-36.6-13.4-36.6-36.6s13.4-35.8 36.6-35.8c23.6 0 37 12.6 37 35.8s-13.4 36.6-37 36.6zM512 350.5c-17.5 8.5-43.1 16.3-66.3 16.3-48.4 0-66.7-19.5-66.7-65.5V194.8c0-5.4 1.1-4.1-31.7-4.1V154.5c35.8-4.1 50-22 54.5-66.3h38.6c0 65.8-1.3 61.8 3.3 61.8H501v40.7h-60.6v97.2c0 6.9-4.9 51.4 60.6 26.8z"/></svg>
             </div>
           </Link>
-          <Link href= "" className="group">
+          <Link href= "https://www.linkedin.com/in/ghulam-akber-8221052bb/" className="group">
             <div className="w-10 h-10 rounded-full bg-[#eee] dark:bg-[#252525] flex items-center justify-center group-hover:bg-[#ffb400]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
             className="fill-current h-6 group-hover:text-white"

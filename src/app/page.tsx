@@ -31,7 +31,7 @@ export default function Home() {
               </div>
               <div className="sm:p-8">
                   <p className="open-sans-font text-center text-[#666666] pb-8 leading-10 dark:text-[#FFFFFF] md:text-start">
-                      I`&apos;`m a Tunisian based web designer &amp; front‑end developer focused on crafting clean &amp; user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.
+                      I&apos;m a web designer &amp; front‑end developer focused on crafting clean &amp; user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.
                   </p>
                   <Button 
                   label="more about me"

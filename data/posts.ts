@@ -1,4 +1,3 @@
-import { parseArgs } from "util";
 
 export interface Post {
     slug: string;
