@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { icon, iconLabels, Links } from "../../data/icon";
 
 const Header = () => {
-    const [darkMode, setDarkMode] = useState<boolean>(true);
+    const [darkMode, setDarkMode] = useState<boolean>(false);
 
     useEffect(() => {
       const theme = localStorage.getItem("theme")
@@ -47,7 +47,7 @@ const Header = () => {
                 width={25}
                 height={25}
                 onClick={handleToggle}
-                className={`${show ? "hidden" : "block"}`}
+                className={`${show ? "block" : "hidden"} `}                
               />
               <Image 
                 src={"/icons/moon-regular.svg"}
@@ -55,7 +55,7 @@ const Header = () => {
                 width={25}
                 height={25}
                 onClick={handleToggle}
-                className={`${show ? "block" : "hidden"} `}
+                className={`${show ? "hidden" : "block"}`}
               />
           </div>
         </div>
