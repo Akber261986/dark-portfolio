@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 import { icon, iconLabels, Links } from "../../data/icon";
 
 const Header = () => {
-    const [darkMode, setDarkMode] = useState<boolean>(false);
+    const [darkMode, setDarkMode] = useState<boolean>(true);
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     useEffect(() => {
       const theme = localStorage.getItem("theme")
@@ -23,15 +24,8 @@ const Header = () => {
       }
     }, [darkMode])
 
-    const [show, setShow] = useState<boolean>(false);
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
     const handleClick = (index: number) => {
       setActiveIndex(index);
-    };
-
-    const handleToggle = () => {
-        setShow(!show);
     };
 
     return (
@@ -44,18 +38,16 @@ const Header = () => {
               <Image 
                 src={"/icons/sun-w.svg"}
                 alt="sun"
-                width={25}
-                height={25}
-                onClick={handleToggle}
-                className={`${show ? "block" : "hidden"} `}                
+                width={20}
+                height={20}
+                className={`${darkMode ? "block" : "hidden"} `}
               />
               <Image 
                 src={"/icons/moon-regular.svg"}
                 alt="moon"
-                width={25}
-                height={25}
-                onClick={handleToggle}
-                className={`${show ? "hidden" : "block"}`}
+                width={20}
+                height={20}
+                className={`${darkMode ? "hidden" : "block"}`}
               />
           </div>
         </div>

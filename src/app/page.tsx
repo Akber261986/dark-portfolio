@@ -37,6 +37,7 @@ export default function Home() {
                   label="more about me"
                   link=""
                   logo="/icons/arrow-right-solid.svg"
+                  className="whitespace-nowrap"
                   />
               </div>
           </div>

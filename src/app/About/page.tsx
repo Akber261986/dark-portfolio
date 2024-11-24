@@ -8,7 +8,7 @@ import SkillIndicator from '@/components/SkillIndicator';
 const About = () => {
   return (
     <div className='page-transition'>
-      <div className='px-8 animate-slide-up opacity-0 translate-y-10'>
+      <div className='px-3 md:px-8 animate-slide-up opacity-0 translate-y-10'>
         {/* heading  */}
         <div className="relative">
           <div className='w-full text-[#666] dark:text-[#FFF] uppercase font-extrabold text-3xl py-16 mb-4
