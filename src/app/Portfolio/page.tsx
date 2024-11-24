@@ -4,6 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { navItems, projects, ProjectPost } from "../../../data/posts";
 import Image from "next/image";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init ({
+  duration:400,
+});
+AOS.refresh();
 
 const Portfolio = () => {
   const [activeItem, setActiveItem] = useState<number | null>(null);
@@ -80,6 +86,7 @@ const Portfolio = () => {
                   : "text-[#666] dark:text-white"
               }`}
               onClick={() => handleTextColor(index)}
+            
             >
               <Link href="#">{item}</Link>
             </li>
@@ -93,8 +100,10 @@ const Portfolio = () => {
           filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group w-full h-[200px] relative cursor-pointer flex border rounded-lg shadow hover:shadow-lg animate-slide-Right"
+              className="group w-full h-[200px] relative cursor-pointer flex border rounded-lg shadow hover:shadow-lg"
               onClick={() => openModal(project)}
+              data-aos="fade-right"
+              data-aos-duration="1000"
             >
               {/* Hover Effect */}
               <h2 className="absolute w-full h-full top-0 left-0 transform scale-y-0 opacity-0 group-hover:opacity-100 group-hover:scale-y-100 origin-top transition-scale duration-500 ease-in-out text-white bg-[#ffb400] text-xl font-bold text-center content-center rounded-lg">
