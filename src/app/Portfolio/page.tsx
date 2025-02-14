@@ -112,8 +112,8 @@ const Portfolio = () => {
               <Image
                 src={project.img}
                 alt="img"
-                width={200}
-                height={150}
+                width={1200}
+                height={800}
                 className="rounded-lg w-full"
               />
             </div>

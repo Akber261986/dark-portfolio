@@ -94,6 +94,17 @@ export interface ProjectPost {
 }
 export const projects:ProjectPost [] = [
   { 
+    id: 0, 
+    title: 'Figma Tamplet', 
+    category: 'web design', 
+    img: '/project/hecto.JPG',
+    projectName: "Hecto",
+    client: "Muhammad Ameen",
+    language: "Nextjs, TypeScript, Tailwind CSS",
+    previewLink: "https://hackathon-ecommerce-web-q2.vercel.app/",
+    label: "www.hecto.com",
+  },
+  { 
     id: 1, 
     title: 'Figma Tamplet', 
     category: 'web design', 
@@ -128,8 +139,8 @@ export const projects:ProjectPost [] = [
   },
   { 
     id: 4, 
-    title: 'UI/UX Design', 
-    category: 'ui/ux', 
+    title: 'Digital timer', 
+    category: 'development', 
     img: '/project/project3.jpg',
     projectName: "Countdown Timer", 
     client: "Asharib Ali", 
@@ -139,8 +150,8 @@ export const projects:ProjectPost [] = [
   },
   { 
     id: 5, 
-    title: 'UI/UX', 
-    category: 'ui/ux', 
+    title: 'Front End', 
+    category: 'development', 
     img: '/project/project4.jpg',
     projectName: "Number Guessing Game", 
     client: "Hamzah Syed", 
@@ -159,6 +170,18 @@ export const projects:ProjectPost [] = [
     previewLink: "https://day06-digital-clock.vercel.app/", 
     label: "www.digitalclock.com",
   },
+  { 
+    id: 7, 
+    title: 'Hackathone', 
+    category: 'ui/ux', 
+    img: '/project/plant-web.jpg',
+    projectName: "E-commerce Web", 
+    client: "Ameen Alam", 
+    language: "Nextjs, TypeScript, Tailwind CSS", 
+    previewLink: "https://milestone-3-e-comerce-site.vercel.app/", 
+    label: "www.dreamplant.com",
+  },
+ 
 ];
 
 export interface Posts {
