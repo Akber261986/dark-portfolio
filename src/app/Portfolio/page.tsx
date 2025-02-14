@@ -1,15 +1,11 @@
 'use client';
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems, projects, ProjectPost } from "../../../data/posts";
 import Image from "next/image";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-AOS.init ({
-  duration:400,
-});
-AOS.refresh();
 
 const Portfolio = () => {
   const [activeItem, setActiveItem] = useState<number | null>(null);
@@ -31,6 +27,14 @@ const Portfolio = () => {
     setSelectedProject(null);
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 400,
+    });
+  }, []);
+
+  AOS.refresh();
 
   // Filter projects based on active category
   const filteredProjects =
