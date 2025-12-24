@@ -14,6 +14,7 @@ const ContactUs = () => {
   });
   const [message, setMessage] = useState<string>("")
   const [error, setError] = useState<string>("")
+  const [loading, setLoading] = useState<boolean>(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -23,6 +24,9 @@ const ContactUs = () => {
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
+    setMessage("");
   
     try {
       const response = await fetch('/api/contact', {
@@ -52,6 +56,8 @@ const ContactUs = () => {
       setTimeout(() => {
         setError("");
       }, 4000);
+    } finally {
+      setLoading(false);
     }
   };
   console.log('Message State:', message);
@@ -149,8 +155,10 @@ const ContactUs = () => {
               id="name"
               value={formData.name}
               onChange={handleChange}
-              required placeholder="YOUR NAME"
-              className="w-full border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400]"
+              required 
+              disabled={loading}
+              placeholder="YOUR NAME"
+              className="w-full border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400] disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div className="col-span-2 md:col-span-1">
@@ -162,7 +170,8 @@ const ContactUs = () => {
               onChange={handleChange} 
               placeholder="YOUR EMAIL" 
               required
-              className="w-full border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400]"
+              disabled={loading}
+              className="w-full border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400] disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div className="col-span-2">
@@ -174,7 +183,8 @@ const ContactUs = () => {
               value={formData.subject}
               placeholder="YOUR SUBJECT" 
               required
-              className="w-full border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400]"
+              disabled={loading}
+              className="w-full border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400] disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div className=" col-span-2">
@@ -185,7 +195,8 @@ const ContactUs = () => {
               onChange={handleChange}
               rows={7}
               required
-              className="w-full h-[200px] border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400]"
+              disabled={loading}
+              className="w-full h-[200px] border-[1px] border-[#ccc] dark:border-[#111] bg-[#eee] dark:bg-[#252525] dark:text-white py-3 px-7 rounded-3xl duration-300 outline-none focus:border-[#ffb400] dark:focus:border-[#ffb400] disabled:opacity-50 disabled:cursor-not-allowed"
               ></textarea>
             </div>
             
@@ -208,25 +219,44 @@ const ContactUs = () => {
               />
               <p className="scrolLineGreen">{message}</p>
             </div>}
+
+            {loading && (
+              <div className="fixed inset-0 bg-black bg-opacity-30 dark:bg-opacity-50 flex items-center justify-center z-50">
+                <div className="bg-white dark:bg-[#252525] rounded-3xl shadow-lg p-8 flex flex-col items-center gap-4">
+                  <div className="relative w-16 h-16">
+                    <div className="absolute inset-0 border-4 border-[#ffb400] border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                  <p className="text-[#666] dark:text-white font-bold uppercase">Sending message...</p>
+                </div>
+              </div>
+            )}
             
             <div className="col-span-1">
-              <button className="relative group flex items-center border border-[#ffb400] rounded-[56px] gap-2 ml-4" type="submit">
+              <button 
+                className="relative group flex items-center border border-[#ffb400] rounded-[56px] gap-2 ml-4 disabled:opacity-50 disabled:cursor-not-allowed" 
+                type="submit"
+                disabled={loading}
+              >
                     <p className="pl-8 text-[#666] dark:text-[#FFF] font-bold font-[sans|sarif] uppercase group-hover:text-[#FFF] group-hover:opacity-0 whitespace-nowrap">
-                    send message
+                    {loading ? 'sending...' : 'send message'}
                     </p>
                     <span
                         className={`absolute top-0 left-0  transform scale-x-0 origin-right opacity-0 text-center bg-[#ffb400] uppercase font-bold text-white rounded-3xl  py-4 pl-7 pr-14 duration-500 ease-in-out z-[-1]
                         group-hover:opacity-100 group-hover:scale-x-100`}
                         >
-                    send message
+                    {loading ? 'sending...' : 'send message'}
                     </span>
                     <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#ffb400] ">
-                    <Image
-                        src={"/icons/paper-plane-solid.svg"}
-                        alt="icon"
-                        width={15}
-                        height={15}
-                    />
+                      {loading ? (
+                        <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      ) : (
+                        <Image
+                          src={"/icons/paper-plane-solid.svg"}
+                          alt="icon"
+                          width={15}
+                          height={15}
+                        />
+                      )}
                     </div>
               </button>
             </div>

@@ -32,9 +32,20 @@ const Portfolio = () => {
     AOS.init({
       duration: 400,
     });
+    AOS.refresh();
   }, []);
 
-  AOS.refresh();
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   // Filter projects based on active category
   const filteredProjects =
@@ -129,16 +140,16 @@ const Portfolio = () => {
 
       {/* Modal */}
       {isModalOpen && selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex justify-center items-center gap-4 z-50">
-          <div className="flex flex-col bg-white dark:bg-gray-800 p-6 rounded-lg w-[70%] relative">
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex justify-center items-center gap-4 z-50 p-4 overflow-y-auto overflow-x-hidden">
+          <div className="flex flex-col bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg w-full sm:w-[90%] md:w-[80%] lg:w-[70%] max-w-4xl max-h-[90vh] relative my-auto overflow-y-auto overflow-x-hidden">
             <button
-              className="w-8 sm:w-14 sm:h-14 rounded-full border-4 border-white border-[2px_white] sm:text-2xl font-bold text-center content-center absolute top-0 right-0 sm:-right-16 text-white hover:text-gray-300"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#ffb400] hover:bg-[#ffa000] text-white font-bold text-lg sm:text-xl flex items-center justify-center absolute top-2 right-2 sm:top-4 sm:right-4 z-10 transition-colors"
               onClick={closeModal}
             >
               ✖
             </button>
             <h1 className=" text-2xl sm:text-3xl md-text-4xl font-bold mb-6 text-center text-[#ffb400]">{selectedProject.projectName}</h1>
-            <div className="self-center max-w-[44rem]">
+            <div className="self-center max-w-[44rem] w-full overflow-x-hidden">
               <div className="max-w-[768px] grid lg:grid-cols-2 gap-3 mb-6 text-sm">
                 <div className="flex gap-2 text-[#666] dark:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" 
@@ -171,13 +182,15 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="w-full flex justify-center">
+              <div className="relative w-full max-w-full h-auto">
               <Image 
               src={selectedProject.img}
               alt="Img"
               width={700}
               height={400}
-              className="rounded-lg"
+              className="rounded-lg w-full h-auto object-contain"
               />
+              </div>
               </div>
             </div>
           </div>

@@ -26,8 +26,8 @@ export const skillsData = [
   { skillName: 'JavaScript', percentage: 70, },
   { skillName: 'Next.js', percentage: 60, },
   { skillName: 'Nodejs', percentage: 65, },
-  { skillName: 'React', percentage: 50, },
-  { skillName: 'Angular', percentage: 40, },
+  { skillName: 'Agentic SDK', percentage: 80, },
+  { skillName: 'AIDD', percentage: 70, },
 ];
 
 export interface Experience {
@@ -71,15 +71,15 @@ export const experiences:Experience [] = [
     description: "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipiscing elit.",
   },
   {
-    title: "AI, Web-3.0, Metavers",
+    title: "AI, Agentic SDK, AIDD",
     company: "GIAIC",
-    date: "2024-Present",
+    date: "2025-Present",
     description: "Learned TypeScript, Nextjs and working more many projects now we are moving to Agentic AI.",
     
   },
 ];
 
-export const navItems = ["Web Design", "UI/UX", "Development"];
+export const navItems = ["Web Design", "UI/UX", "Development", "AI Driven Development"];
 
 export interface ProjectPost {
   id: number; 
@@ -180,6 +180,17 @@ export const projects:ProjectPost [] = [
     language: "Nextjs, TypeScript, Tailwind CSS", 
     previewLink: "https://milestone-3-e-comerce-site.vercel.app/", 
     label: "www.dreamplant.com",
+  },
+  { 
+    id: 8, 
+    title: 'Hackathone II', 
+    category: 'AI Driven Development', 
+    img: '/project/cover_image_book.png',
+    projectName: "Humanoid Robotic Book", 
+    client: "Ameen Alam", 
+    language: "Python, Nextjs, TypeScript", 
+    previewLink: "https://akber261986.github.io/humanoid_robotic_book/", 
+    label: "www.roboticbook.com",
   },
  
 ];
