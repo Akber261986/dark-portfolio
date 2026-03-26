@@ -130,7 +130,7 @@ export const projects:ProjectPost [] = [
     id: 3, 
     title: 'Todo App', 
     category: 'development', 
-    img: '/project/project_todoapp.png',
+    img: '/project/project_todoapp.PNG',
     projectName: "Simple Todo App", 
     client: "Asharib Ali", 
     language: "Nextjs TypeScript", 
